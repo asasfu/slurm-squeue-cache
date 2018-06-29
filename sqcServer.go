@@ -49,7 +49,7 @@ func listenRequest(jobs *[]string, port string){
 
 func main(){
   var jobs []string
-  sf := "\"'%A|%B|%C|%D|%E|%F|%G|%H|%I|%J|%K|%L|%M|%N|%O|%P|%Q|%R|%S|%T|%U|%V|%W|%X|%Y|%Z|%a|%b|%c|%d|%e|%f|%g|%h|%i|%j|%k|%l|%m|%n|%o|%p|%q|%r|%s|%t|%u|%v|%w|%x|%y|%z'\""
+  sf := "\"'%A<|>%B<|>%C<|>%D<|>%E<|>%F<|>%G<|>%H<|>%I<|>%J<|>%K<|>%L<|>%M<|>%N<|>%O<|>%P<|>%Q<|>%R<|>%S<|>%T<|>%U<|>%V<|>%W<|>%X<|>%Y<|>%Z<|>%a<|>%b<|>%c<|>%d<|>%e<|>%f<|>%g<|>%h<|>%i<|>%j<|>%k<|>%l<|>%m<|>%n<|>%o<|>%p<|>%q<|>%r<|>%s<|>%t<|>%u<|>%v<|>%w<|>%x<|>%y<|>%z'\""
 
   var steps []string
 
@@ -59,7 +59,7 @@ func main(){
   for {
     jobs = fetchInput(&jobs,"squeue --format="+sf)
     time.Sleep(30*time.Second)
-    steps = fetchInput(&steps,"squeue -s --format=\"'%A|%M|%N|%P|%S|%U|%b|%i|%j|%l|%u'\"")
+    steps = fetchInput(&steps,"squeue -s --format=\"'%A<|>%M<|>%N<|>%P<|>%S<|>%U<|>%b<|>%i<|>%j<|>%l<|>%u'\"")
     time.Sleep(30*time.Second)
   }
 }

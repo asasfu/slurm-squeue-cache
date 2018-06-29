@@ -102,7 +102,7 @@ func fetchJobs(jobs *[][]string, srv string){
 
   scanner := bufio.NewScanner(strings.NewReader(string(b)))
   for scanner.Scan(){
-    s := strings.Split(scanner.Text(),"|")
+    s := strings.Split(scanner.Text(),"<|>")
     *jobs = append(*jobs,s)
   }
 }
